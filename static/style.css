@@ -1,0 +1,43 @@
+#logo {
+    width:45px;
+    height:45px;
+}
+#message {
+    
+        border-radius: 5px;
+        padding: 10px;
+        padding-right: 700px;
+        border-radius: 50px;
+        background-color: rgb(224, 223, 223);
+}
+.h1 {
+    font:200px;
+}
+
+
+.footer {
+  position: fixed;
+  left: -10;
+  right:45;
+  bottom: 10;
+  width: 100%;
+  
+  color: rgb(0, 0, 0);
+  
+}
+#top {
+    background-color:lightblue
+}
+
+.username {
+    color: blue;
+}
+
+#messages{
+	height: 500px;
+	overflow-y: scroll;
+	margin: 30px;
+	max-width: 2000;
+	background-color: #ffffff;
+	margin-left: 250px;
+}
