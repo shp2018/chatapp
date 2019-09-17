@@ -36,6 +36,8 @@ def message():
      message = request.form["message"]
      c.execute("INSERT INTO messages(message, username) VALUES(?,?)", (username, message))
      conn.commit()
+
+     return request.form
      
 
 

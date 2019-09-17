@@ -1,17 +1,30 @@
 $(document).ready(function() {
-  console.log("wow");
+  setInterval(function() {
+    getMessages();
+  }, 1000);
 
-  $.get("/all-messages", function(data, status) {
-    console.log(data);
-    dataArray = JSON.parse(data);
-    console.log(dataArray);
+  var scrolled = false;
 
-    dataArray.forEach(element => {
-      $("#messages").append(
-        `<div><span class="username">${element[1]}</span> ${element[2]} </div>`
-      );
+  function getMessages() {
+    $.get("/all-messages", function(data, status) {
+      console.log(data);
+      dataArray = JSON.parse(data);
+      console.log(dataArray);
+
+      $("#messages").html("");
+  
+      dataArray.forEach(element => {
+        $("#messages").append(
+          `<div><span class="username">${element[1]}</span> ${element[2]} </div>`
+        );
+      });
+      if (!scrolled) {
+        var objDiv = document.getElementById("messages");
+        objDiv.scrollTop = objDiv.scrollHeight;
+        scrolled = true;
+      }
     });
-  });
+  }
 
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
@@ -22,7 +35,7 @@ $(document).ready(function() {
       ) {
         console.log("sucessfully posted");
       });
-      alert(`${username} is going to send ${message}`);
+      $("#message").val("");
     }
   });
 });
