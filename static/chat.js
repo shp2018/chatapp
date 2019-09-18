@@ -15,7 +15,7 @@ $(document).ready(function() {
   
       dataArray.forEach(element => {
         $("#messages").append(
-          `<div><span class="username">${element[1]}</span> ${element[2]} </div>`
+          `<div><span class="message"><span class="username">${element[1]}</span> ${element[2]} </div>`
         );
       });
       if (!scrolled) {
@@ -34,8 +34,9 @@ $(document).ready(function() {
         result
       ) {
         console.log("sucessfully posted");
+        $("#message").val("");
       });
-      $("#message").val("");
+      
     }
   });
 });

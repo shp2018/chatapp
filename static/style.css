@@ -1,6 +1,36 @@
 #logo {
     width:45px;
     height:45px;
+    position: relative;
+    left: 30px;
+    top:5px;
+
+}
+#logo2 {
+    width:45px;
+    height:45px;
+    
+}
+#call {
+    width:45px;
+    height:45px;
+    position: relative;
+    right:20px;
+    top:5px;
+}
+#video_call {
+    width:45px;
+    height:45px;
+    position: relative;
+    top:5px;
+
+}
+#info{
+    width:45px;
+    height:45px;
+    position: relative;
+    top:5px;
+    left:20px;
 }
 #message {
     
@@ -12,6 +42,7 @@
 }
 .h1 {
     font:200px;
+    left: 10px;
 }
 
 
@@ -19,18 +50,25 @@
     position: fixed;
     height: 50px;
     bottom: 0px;
-    left: 0px;
+    left: 20px;
     right: 0px;
     margin-bottom: 0px;
 }
 
 #top {
     background-color:lightblue
+    
 }
-
+.h1{
+    font-family: 'Roboto', sans-serif;
+}
 .username {
     color: blue;
    
+   
+}
+.message {
+    
 }
 
 #messages{
@@ -40,5 +78,15 @@
 	max-width: 2000;
 	background-color: #ffffff;
     margin-left: 250px;
+}
+
+#username {
+    left: 10px;
+    border-radius: 10px;
+    padding: 0px;
+    padding-right: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
 }
     
