@@ -12,10 +12,12 @@ $(document).ready(function() {
       console.log(dataArray);
 
       $("#messages").html("");
-  
+
       dataArray.forEach(element => {
         $("#messages").append(
-          `<div><span class="message"><span class="username">${element[1]}</span> ${element[2]} </div>`
+          `<div class = "line-spacing"><span class="message"><span class="username">${
+            element[1]
+          }</span> ${element[2]} </div>`
         );
       });
       if (!scrolled) {
@@ -30,13 +32,23 @@ $(document).ready(function() {
     if (e.which == 13) {
       var username = $("#username").val();
       var message = $("#message").val();
-      $.post("/message", { username: username, message: message }, function(
-        result
-      ) {
-        console.log("sucessfully posted");
-        $("#message").val("");
-      });
-      
-    }
+    
+      }
+      if (message !== "") {
+        $.post("/message", { username: username, message: message }, function(
+          result
+        ) {
+          console.log("sucessfully posted");
+          $("#messages").append(
+            `<div class = "line-spacing"><span class="message"><span class="username">${
+              username
+            }</span> ${message} </div>`
+          );
+          var objDiv = document.getElementById("messages");
+          objDiv.scrollTop = objDiv.scrollHeight;
+          $("#message").val("");  
+        });
+      }
+    
   });
 });

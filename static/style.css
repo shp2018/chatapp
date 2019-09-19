@@ -36,7 +36,7 @@
     
         border-radius: 5px;
         padding: 10px;
-        padding-right: 700px;
+        padding-right: 800px;
         border-radius: 50px;
         background-color: rgb(224, 223, 223);
 }
@@ -53,23 +53,39 @@
     left: 20px;
     right: 0px;
     margin-bottom: 0px;
+    padding-right: 20px;
 }
 
 #top {
     background-color:lightblue
     
 }
-.h1{
-    font-family: 'Roboto', sans-serif;
+.topic{
+    font-family: 'Patua One', cursive;
 }
 .username {
-    color: blue;
+    color: rgb(255, 255, 255);
+    
+    font-family: 'Permanent Marker', cursive;
+    font-size:20px;
    
    
 }
 .message {
+    color:white;
+    font-size:15px;
     
 }
+
+.line-spacing{
+ margin-top:20px;
+ background-color: #0099ff;
+ padding:7px;
+ border-radius: 45px;
+ font-family: 'Livvic', sans-serif;
+ 
+}
+
 
 #messages{
 	height: 450px;
@@ -78,6 +94,7 @@
 	max-width: 2000;
 	background-color: #ffffff;
     margin-left: 250px;
+  
 }
 
 #username {
