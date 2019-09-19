@@ -7,18 +7,17 @@ $(document).ready(function() {
 
   function getMessages() {
     $.get("/all-messages", function(data, status) {
-      console.log(data);
       dataArray = JSON.parse(data);
-      console.log(dataArray);
 
       $("#messages").html("");
 
       dataArray.forEach(element => {
-        $("#messages").append(
-          `<div class = "line-spacing"><span class="message"><span class="username">${
-            element[1]
-          }</span> ${element[2]} </div>`
-        );
+        var $messageAppended = $("#messages").append(
+          `<div class = "line-spacing"><span class="username"></span><span class="message"></span></div>`
+        )
+
+        $messageAppended.children("div:last-child").children().eq(0).html(document.createTextNode(element[1] + " : "));
+        $messageAppended.children("div:last-child").children().eq(1).html(document.createTextNode(element[2]));
       });
       if (!scrolled) {
         var objDiv = document.getElementById("messages");
@@ -38,12 +37,19 @@ $(document).ready(function() {
         $.post("/message", { username: username, message: message }, function(
           result
         ) {
-          console.log("sucessfully posted");
-          $("#messages").append(
-            `<div class = "line-spacing"><span class="message"><span class="username">${
-              username
-            }</span> ${message} </div>`
-          );
+          var $messageAppended = $("#messages").append(
+            `
+            <div class = "line-spacing">
+              <span class="username"></span>
+              <span class="message"></span>
+            </div>
+            `
+          )
+
+          $messageAppended.children("div:last-child").children().eq(0).html(document.createTextNode(username + " : "));
+          $messageAppended.children("div:last-child").children().eq(1).html(document.createTextNode(message));
+
+
           var objDiv = document.getElementById("messages");
           objDiv.scrollTop = objDiv.scrollHeight;
           $("#message").val("");  
